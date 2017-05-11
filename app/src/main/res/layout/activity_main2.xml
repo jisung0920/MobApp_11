@@ -35,12 +35,14 @@
                 android:textSize="15dp" />
 
             <Button
+                android:onClick="onClick"
                 android:id="@+id/btnsave"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:text="저장" />
 
             <Button
+                android:onClick="onClick"
                 android:id="@+id/btncancel"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
@@ -48,6 +50,7 @@
         </LinearLayout>
 
         <DatePicker
+            android:id="@+id/datepick"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="-20dp"
@@ -56,6 +59,7 @@
             android:scaleY="0.8" />
 
         <EditText
+            android:id="@+id/e1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
