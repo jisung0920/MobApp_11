@@ -71,22 +71,11 @@ public class Main2Activity extends AppCompatActivity {
                     br = new BufferedReader(new FileReader(filepath));
                     String readStr = "";
                     String str = null;
-//                    datePicker.updateDate(04,02,11);
-//                    DatePickerDialog.OnDateSetListener mDateSetListener = new DatePickerDialog.OnDateSetListener()
-//                    {
-//                        public void onDateSet( DatePicker view, int year, int monthOfYear, int dayOfMonth )
-//                        {
-//                            // TODO Auto-generated method stub
-//                            int mYear = Integer.parseInt(filename.substring(0,2));
-//                            int mMonth = Integer.parseInt(filename.substring(3,5));
-//                            int mDay = Integer.parseInt(filename.substring(6,8));
-//                        }
-//                    };
 
-                    datePicker.init(Integer.parseInt(filename.substring(0,2)),
-                            Integer.parseInt(filename.substring(3,5)),
-                            Integer.parseInt(filename.substring(6,8)), null);
-                    Toast.makeText(Main2Activity.this, Integer.parseInt(filename.substring(0,2))+"", Toast.LENGTH_SHORT).show();
+                    int year = Integer.parseInt("20"+filename.substring(0,2));
+                    int month = Integer.parseInt(filename.substring(3,5));
+                    int day = Integer.parseInt(filename.substring(6,8));
+                    datePicker.updateDate(year,month-1,day);
 
                     while ((str = br.readLine()) != null) {
                         e1.setText(readStr += str + "\n");
