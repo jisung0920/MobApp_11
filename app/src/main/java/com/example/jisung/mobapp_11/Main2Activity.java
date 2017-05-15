@@ -42,16 +42,15 @@ public class Main2Activity extends AppCompatActivity {
     EditText e1;
     TextView t1;
     Button b1;
-    String path = getExternalPath();
-    String dirpath = path+"diary/";
-    String tmppath="";
-    String tmpmemo="";
+    String path;
+    String dirpath;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        init();
         checkPermission();
+        init();
+
         adapter = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,data);
         adapter.notifyDataSetChanged();
         listView.setAdapter(adapter);
@@ -120,6 +119,8 @@ public class Main2Activity extends AppCompatActivity {
     }
     void init(){
         t1 =(TextView)findViewById(R.id.tvCount);
+        path = getExternalPath();
+        dirpath = path+"diary/";
         File file = new File(path + "diary");
 
         if (file.isDirectory() == false)
@@ -135,6 +136,7 @@ public class Main2Activity extends AppCompatActivity {
         File[] files = new File(path+"diary").listFiles();
         for(File f:files)
             data.add(f.getName());
+
 
     }
     void onClick(View v){
@@ -207,6 +209,7 @@ public class Main2Activity extends AppCompatActivity {
             }
         }
     }
+
 
 
     @Override
